@@ -21,6 +21,7 @@ import ShadowBox from './components/ShadowBox.vue';
     :height="50"
     color="blue"
   />
+  <div class="box" />
 </template>
 
 <style>
@@ -31,5 +32,12 @@ import ShadowBox from './components/ShadowBox.vue';
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.box {
+  margin-top: 50px;
+  width: 100px;
+  height: 100px;
+  background-image: repeating-linear-gradient(-45deg, white -2px, red 1px, white 2px);
 }
 </style>
