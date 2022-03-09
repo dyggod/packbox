@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory, RouterOptions } from 'vue-router';
+import { createRouter, createWebHashHistory, RouterOptions } from 'vue-router';
 
 import Login from '../pages/login/index.vue';
 import CssDemo from '../pages/cssDemo/index.vue';
@@ -22,7 +22,7 @@ const routes = [
 ];
 
 const routeOpt = <RouterOptions>{
-  history: createWebHistory('/'),
+  history: createWebHashHistory(),
   routes,
 };
 
