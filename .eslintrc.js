@@ -17,13 +17,25 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
     parser: '@typescript-eslint/parser',
-    // project: ['./tsconfig.json'],
-    // tsconfigRootDir: __dirname,
   },
   plugins: [
     'vue',
     '@typescript-eslint',
   ],
   rules: {
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        tsx: 'never',
+        ts: 'never',
+        vue: 'never',
+      },
+    ],
+  },
+  settings: {
+    'import/resolver': {
+      typescript: {},
+    },
   },
 };
