@@ -9,8 +9,10 @@
     "lint": "eslint --ext .ts,vue ./src"
   },
   "dependencies": {
+    "@ant-design/icons-vue": "^6.0.1",
     "@vitejs/plugin-vue": "^2.2.0",
     "ant-design-vue": "^3.0.0-beta.13",
+    "pinia": "^2.0.11",
     "vite": "^2.8.0",
     "vue": "^3.2.25",
     "vue-router": "^4.0.13"

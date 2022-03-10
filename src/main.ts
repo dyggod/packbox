@@ -1,7 +1,8 @@
 import { createApp } from 'vue';
 import Antd from 'ant-design-vue';
-import { setupRouter } from './router';
 import App from './App.vue';
+import { setupRouter } from './router';
+import { setupStore } from './store';
 import 'ant-design-vue/dist/antd.css';
 
 function bootstrap() {
@@ -9,6 +10,9 @@ function bootstrap() {
 
   // 配置路由
   setupRouter(app);
+
+  // 状态管理
+  setupStore(app);
 
   // 配置antd
   app.use(Antd);

@@ -1,16 +1,5 @@
-import type { AppRouteRecordRaw, AppRouteModule } from '@/router/types';
-
-const modules = import.meta.globEager('./modules/**/*.ts');
-
-const routeModuleList: AppRouteModule[] = [];
-
-Object.keys(modules).forEach((key) => {
-  const mod = modules[key].default || {};
-  const modList = Array.isArray(mod) ? [...mod] : [mod];
-  routeModuleList.push(...modList);
-});
-
-export const asyncRoutes = [...routeModuleList];
+import type { AppRouteRecordRaw } from '@/router/types';
+import asyncRoutes from './mount';
 
 export const RootRoute: AppRouteRecordRaw = {
   path: '/',
@@ -30,17 +19,19 @@ export const LoginRoute: AppRouteRecordRaw = {
   },
 };
 
-export const CssDemo: AppRouteRecordRaw = {
-  path: '/css',
-  name: 'Css',
-  component: () => import('@/pages/cssDemo/index.vue'),
+export const Layout: AppRouteRecordRaw = {
+  path: '/layout',
+  name: 'Layout',
+  redirect: '/layout/css',
+  component: () => import('@/layout/Layout.vue'),
+  children: asyncRoutes,
   meta: {
-    title: 'Css pages',
+    title: 'Layout pages',
   },
 };
 
 export const basicRoutes = [
   LoginRoute,
   RootRoute,
-  CssDemo,
+  Layout,
 ];
