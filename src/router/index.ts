@@ -1,35 +1,22 @@
-import { createRouter, createWebHashHistory, RouterOptions } from 'vue-router';
+import { createRouter, createWebHashHistory } from 'vue-router';
+import type { RouteRecordRaw } from 'vue-router';
+import type { App } from 'vue';
 
-import Login from '../pages/login/index.vue';
-import CssDemo from '../pages/cssDemo/index.vue';
+import { basicRoutes } from './routes';
 
-const routes = [
-  {
-    path: '/',
-    name: 'index',
-    redirect: '/login',
-  },
-  {
-    path: '/login',
-    name: 'login',
-    component: Login,
-  },
-  {
-    path: '/css',
-    name: 'css',
-    component: CssDemo,
-  },
-];
-
-const routeOpt = <RouterOptions>{
+// app router
+export const router = createRouter({
   history: createWebHashHistory(),
-  routes,
-};
-
-const router = createRouter(routeOpt);
+  routes: basicRoutes as unknown as RouteRecordRaw[],
+  strict: true,
+  scrollBehavior: () => ({ left: 0, top: 0 }),
+});
 
 router.beforeEach((to, from, next) => {
   next();
 });
 
-export default router;
+// config router
+export function setupRouter(app: App<Element>) {
+  app.use(router);
+}
