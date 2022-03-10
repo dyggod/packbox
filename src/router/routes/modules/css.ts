@@ -1,11 +1,4 @@
 import { AppRouteRecordRaw } from '@/router/types';
-import {
-  PieChartOutlined,
-  DesktopOutlined,
-  UserOutlined,
-  TeamOutlined,
-  FileOutlined,
-} from '@ant-design/icons-vue';
 
 const CssDemo: AppRouteRecordRaw = {
   path: 'css',
