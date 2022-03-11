@@ -4,7 +4,7 @@ import asyncRoutes from './mount';
 export const RootRoute: AppRouteRecordRaw = {
   path: '/',
   name: 'Root',
-  redirect: '/login',
+  redirect: '/layout',
   meta: {
     title: 'Root',
   },
