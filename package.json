@@ -7,7 +7,8 @@
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
     "lint": "eslint --ext .ts,vue ./src",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "commit": "cz"
   },
   "dependencies": {
     "@ant-design/icons-vue": "^6.0.1",
@@ -26,6 +27,8 @@
     "@typescript-eslint/parser": "^5.14.0",
     "@vue/compiler-sfc": "^3.2.31",
     "@vue/eslint-config-typescript": "^9.0.1",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.2.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-import-resolver-typescript": "^2.5.0",
@@ -39,5 +42,10 @@
   },
   "lint-staged": {
     "*.{vue,js}": "eslint --fix"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
