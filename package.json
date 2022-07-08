@@ -36,5 +36,8 @@
     "sass": "^1.49.9",
     "typescript": "^4.5.4",
     "vue-tsc": "^0.29.8"
+  },
+  "lint-staged": {
+    "*.{vue,js}": "eslint --fix"
   }
 }
