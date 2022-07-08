@@ -59,16 +59,20 @@ function navTo(path: string) {
 }
 
 </script>
-<style>
+
+<style lang="less" scoped>
+@color: rgba(255, 255, 255, 0.3);
+
 #components-layout-demo-side .logo {
   height: 32px;
   margin: 16px;
-  background: rgba(255, 255, 255, 0.3);
+  background: @color;
 }
 
 .site-layout .site-layout-background {
-  background: #fff;
+  background: @color;
 }
+
 [data-theme='dark'] .site-layout .site-layout-background {
   background: #141414;
 }
