@@ -1,0 +1,25 @@
+@import 'ant-design-vue/dist/antd.less';
+
+// 修改浏览器默认滚动轴样式
+.beauty-scroll {
+  scrollbar-color: @primary-color @primary-2  !important;
+  scrollbar-width: thin !important;
+  -ms-overflow-style: none !important;
+  position: relative !important;
+
+  &::-webkit-scrollbar {
+    width: 6px !important;
+    height: 1px !important;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 6px !important;
+    background: @primary-color  !important;
+  }
+
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0) !important;
+    border-radius: 3px !important;
+    background: @primary-3  !important;
+  }
+}

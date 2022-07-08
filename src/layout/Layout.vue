@@ -1,83 +1,40 @@
 <template>
   <a-layout style="min-height: 100vh">
-    <a-layout-sider
-      id="components-layout-demo-side"
-      v-model:collapsed="collapsed"
-      collapsible
-    >
-      <div class="logo" />
-      <a-menu
-        v-model:selectedKeys="selectedKeys"
-        theme="dark"
-        mode="inline"
-      >
-        <a-menu-item
-          v-for="(item, index) in routes"
-          :key="index"
-          @click="navTo(item.path)"
-        >
-          <Icon
-            v-if="item.meta.icon"
-            :icon="item.meta.icon"
-          />
-          <span :class="item.meta.icon ? '':'p-l'">{{ item.meta.title }}</span>
-        </a-menu-item>
-      </a-menu>
-    </a-layout-sider>
-    <a-layout>
-      <a-layout-header style="background: #fff; padding: 0" />
+    <Menu />
+    <a-layout class="layout-right">
+      <Header />
       <a-layout-content
         style="margin: 0 16px"
-        class="router-content-container"
+        class="router-content-container beauty-scroll"
       >
-        <router-view />
+        <Main />
       </a-layout-content>
       <a-layout-footer style="text-align: center">
-        Ant Design ©2018 Created by Ant UED
+        PackBox ©2022 Created by dyggod
       </a-layout-footer>
     </a-layout>
   </a-layout>
 </template>
-<script lang="ts">
-import Icon from '@/components/Icon';
-import { ref } from 'vue';
-</script>
 <script lang="ts" setup>
-import { useRouter } from 'vue-router';
-import { useRoutesStore } from '@/store/modules/routes';
-
-const router = useRouter();
-const store = useRoutesStore();
-const { routes } = store;
-
-const collapsed = ref<boolean>(false);
-const selectedKeys = ref<string[]>(['1']);
-
-function navTo(path: string) {
-  const prefix = '/layout/';
-  router.push(`${prefix}${path}`);
-}
+import Menu from './menu/index.vue';
+import Main from './main/index.vue';
+import Header from './header';
 
 </script>
 
 <style lang="less" scoped>
-@color: rgba(255, 255, 255, 0.3);
+@header-height: 64px;
+@pd-left-16: 16px;
+@sider-width: 256px;
 
-#components-layout-demo-side .logo {
-  height: 32px;
-  margin: 16px;
-  background: @color;
+.layout-right {
+  height: 100vh;
 }
 
-.site-layout .site-layout-background {
-  background: @color;
-}
-
-[data-theme='dark'] .site-layout .site-layout-background {
-  background: #141414;
-}
-
-.p-l {
-  padding-left: 24px;
+.router-content-container {
+  padding-left: @pd-left-16;
+  padding-right: @pd-left-16;
+  max-height: calc(100vh - @header-height);
+  overflow-y: auto;
 }
 </style>

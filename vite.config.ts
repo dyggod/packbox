@@ -10,6 +10,15 @@ export default defineConfig({
     host: '0.0.0.0',
     port: 3001,
   },
+  css: {
+    preprocessorOptions: {
+      less: {
+        modifyVars: {},
+        javascriptEnabled: true,
+        additionalData: '@import "src/style/index.less";',
+      },
+    },
+  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),

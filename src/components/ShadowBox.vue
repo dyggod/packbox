@@ -48,7 +48,7 @@ function genInnerBoxStyle(ind: number) {
 }
 
 </script>
-<style lang='scss' scoped>
+<style lang='less' scoped>
 .shadow-box {
   position: relative;
   overflow: hidden;
