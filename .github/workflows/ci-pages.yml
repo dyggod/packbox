@@ -4,14 +4,34 @@ name: Build And Deploy To Github Pages
 # workflow的触发事件，这里代表main分支的push事件触发
 on:
   push:
-    branches: [ main ]
+    branches: [main]
+
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: "Log level"
+        required: true
+        default: "warning"
+        type: choice
+        options:
+          - info
+          - warning
+          - debug
+      tags:
+        description: "Test scenario tags"
+        required: false
+        type: boolean
+      environment:
+        description: "Environment to run tests against"
+        type: environment
+        required: true
 
 # 任务
 jobs:
   # build-and-deploy 为任务的ID
   build-and-deploy:
     # 运行所需要的环境
-    runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest
 
     steps:
       # 步骤名
@@ -28,7 +48,7 @@ jobs:
           npm install pnpm -g
           pnpm install
           pnpm run build
-      
+
       # 执行JamesIves/github-pages-deploy-action将项目发布到Github Pages
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.7.1
