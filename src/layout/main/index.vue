@@ -18,14 +18,15 @@
 </script>
 
 <style lang="less" scoped>
-.page-toggle-enter-active{
+.page-toggle-enter-active {
   position: absolute !important;
   animation-duration: 0.6s !important;
   width: calc(100%) !important;
 }
-.page-toggle-leave-active{
+.page-toggle-leave-active {
   position: absolute !important;
   animation-duration: 0.2s !important;
   width: calc(100%) !important;
 }
+
   </style>

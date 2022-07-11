@@ -1,14 +1,15 @@
 <template>
-  <div>
+  <Container>
     <a-pagination
       v-model:current="current"
       :total="500"
     />
-  </div>
+  </Container>
 </template>
 
 <script setup lang='ts'>
 import { ref } from 'vue';
+import Container from '@/components/container';
 
 const current = ref(1);
 

@@ -3,9 +3,16 @@
     id="components-layout-demo-side"
     v-model:collapsed="collapsed"
     collapsible
+    width="256"
   >
     <div class="logo">
-      {{ $t('menu.systemName') }}
+      <router-link to="/home">
+        <img
+          src="@/assets/images/logo.png"
+          alt=""
+        >
+        <h1>{{ $t('menu.systemName') }}</h1>
+      </router-link>
     </div>
     <a-menu
       v-model:selectedKeys="selectedKeys"
@@ -52,11 +59,5 @@ function navTo(path: string) {
 </script>
 
 <style lang="less" scoped>
-@color: rgba(255, 255, 255, 0.3);
-
-#components-layout-demo-side .logo {
-  height: 32px;
-  margin: 16px;
-  background: @color;
-}
+@import './index.less';
 </style>

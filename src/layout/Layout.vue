@@ -36,5 +36,6 @@ import Header from './header';
   padding-right: @pd-left-16;
   max-height: calc(100vh - @header-height);
   overflow-y: auto;
+  text-align: center;
 }
 </style>

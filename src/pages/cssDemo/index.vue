@@ -1,18 +1,18 @@
 <template>
-  <div>
-    <div class="box" />
-    <div class="box2" />
+  <Container>
     <div>
-      <ShadowBoxVue />
+      <div class="box" />
+      <div class="box2" />
+      <div>
+        <ShadowBoxVue />
+      </div>
     </div>
-  </div>
+  </Container>
 </template>
 
 <script lang='ts' setup>
-import {
-  reactive, toRefs, onBeforeMount, onMounted,
-} from 'vue';
 import ShadowBoxVue from '@/components/ShadowBox.vue';
+import Container from '@/components/container/index.vue';
 
 </script>
 <style lang='less' scoped>
