@@ -23,6 +23,7 @@ export const Layout: AppRouteRecordRaw = {
   path: '/home',
   name: 'Home',
   component: () => import('@/layout/Layout.vue'),
+  redirect: '/home/index',
   children: [
     {
       path: '/home/index',

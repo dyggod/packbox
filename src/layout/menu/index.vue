@@ -4,12 +4,17 @@
     v-model:collapsed="collapsed"
     collapsible
   >
-    <div class="logo" />
+    <div class="logo">
+      {{ $t('menu.systemName') }}
+    </div>
     <a-menu
       v-model:selectedKeys="selectedKeys"
       theme="dark"
       mode="inline"
     >
+      <a-menu-item @click="navTo('/home')">
+        首页
+      </a-menu-item>
       <a-menu-item
         v-for="(item, index) in routes"
         :key="index"
@@ -36,7 +41,6 @@ import { useRoutesStore } from '@/store/modules/routes';
 
 const routesStore = useRoutesStore();
 const { routes } = routesStore;
-console.log('routes: ', routes);
 const collapsed = ref<boolean>(false);
 const selectedKeys = ref<string[]>(['1']);
 
