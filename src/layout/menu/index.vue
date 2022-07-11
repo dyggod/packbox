@@ -36,13 +36,14 @@ import { useRoutesStore } from '@/store/modules/routes';
 
 const routesStore = useRoutesStore();
 const { routes } = routesStore;
+console.log('routes: ', routes);
 const collapsed = ref<boolean>(false);
 const selectedKeys = ref<string[]>(['1']);
 
 const router = useRouter();
 function navTo(path: string) {
   const prefix = '/layout/';
-  router.push(`${prefix}${path}`);
+  router.push(`${path}`);
 }
 </script>
 

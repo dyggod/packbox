@@ -1,18 +1,16 @@
 <template>
-  <transition
-    :enter-active-class="`animate__animated animate__lightSpeedInLeft page-toggle-enter-active`"
-    :leave-active-class="`animate__animated animate__lightSpeedOutRight
+  <router-view v-slot="{ Component, route }">
+    <transition
+      :enter-active-class="`animate__animated animate__lightSpeedInLeft page-toggle-enter-active`"
+      :leave-active-class="`animate__animated animate__lightSpeedOutRight
       page-toggle-leave-active`"
-  >
-    <router-view>
-      <template #default="{ Component, route }">
-        <component
-          :is="Component"
-          :key="route.fullPath"
-        />
-      </template>
-    </router-view>
-  </transition>
+    >
+      <component
+        :is="Component"
+        :key="route.fullPath"
+      />
+    </transition>
+  </router-view>
 </template>
 
 <script setup lang='ts'>
@@ -30,4 +28,4 @@
   animation-duration: 0.2s !important;
   width: calc(100%) !important;
 }
-</style>
+  </style>
