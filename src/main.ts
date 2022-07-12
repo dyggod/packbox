@@ -4,8 +4,11 @@ import App from './App.vue';
 import { setupRouter } from './router';
 import { setupStore } from './store';
 import { initI18n } from './locales';
+import { loadInterceptors } from './utils/request';
+import interceptors from './utils/interceptor';
 import 'ant-design-vue/dist/antd.css';
 import 'animate.css';
+import '@/mock';
 
 function bootstrap() {
   const app = createApp(App);
@@ -21,6 +24,9 @@ function bootstrap() {
 
   // 配置i18n
   initI18n(app);
+
+  // 加载拦截器
+  loadInterceptors(interceptors, { message: app.config.globalProperties.$message });
 
   // 挂载
   app.mount('#app');
