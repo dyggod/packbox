@@ -1,1 +1,0 @@
-import{C as e}from"./index.162c3a91.js";import{a as t,o,f as a,g as r,j as s,v as n}from"./vendor.53fa650b.js";import"./index.3a8f1762.js";const c=n("Test"),l=t({setup(p){return(_,f)=>(o(),a(s(e),null,{default:r(()=>[c]),_:1}))}});export{l as default};
