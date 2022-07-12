@@ -10,6 +10,6 @@
 
 <style lang="less" scoped>
 .container-card {
-  min-height: 100%;
+  min-height: 100% !important;
 }
 </style>

@@ -23,19 +23,5 @@ import Header from './header';
 </script>
 
 <style lang="less" scoped>
-@header-height: 64px;
-@pd-left-16: 16px;
-@sider-width: 256px;
-
-.layout-right {
-  height: 100vh;
-}
-
-.router-content-container {
-  padding-left: @pd-left-16;
-  padding-right: @pd-left-16;
-  max-height: calc(100vh - @header-height);
-  overflow-y: auto;
-  text-align: center;
-}
+@import './index.less';
 </style>

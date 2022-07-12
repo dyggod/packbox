@@ -20,19 +20,51 @@
       mode="inline"
     >
       <a-menu-item @click="navTo('/home')">
-        首页
-      </a-menu-item>
-      <a-menu-item
-        v-for="(item, index) in routes"
-        :key="index"
-        @click="navTo(item.path)"
-      >
         <Icon
-          v-if="item.meta.icon"
-          :icon="item.meta.icon"
+          :icon="'HomeOutlined'"
         />
-        <span :class="item.meta.icon ? '' : 'p-l'">{{ item.meta.title }}</span>
+        <span class="p-l">首页</span>
       </a-menu-item>
+      <a-sub-menu
+        v-for="(item, index) in routes"
+        :key="`sub_${index}`"
+      >
+        <template #icon>
+          <Icon
+            v-if="item.meta.icon"
+            :icon="item.meta.icon"
+          />
+        </template>
+        <template #title>
+          {{ item.meta.title }}
+        </template>
+        <template
+          v-for="(it, ind) in item.children"
+        >
+          <a-menu-item
+            v-if="!it.children?.length"
+            :key="`item_${index}_${ind}`"
+            @click="navTo(item.path)"
+          >
+            <span :class="item.meta.icon ? '' : 'p-l'">{{ item.meta.title }}</span>
+          </a-menu-item>
+          <a-sub-menu
+            v-else
+            :key="`sub_${index}_${ind}`"
+          >
+            <template #title>
+              {{ it.meta.title }}
+            </template>
+            <a-menu-item
+              v-for="(it2, ind2) in it.children"
+              :key="`item_${index}_${ind}_${ind2}`"
+              @click="navTo(it2.path)"
+            >
+              <span :class="it2.meta.icon ? '' : 'p-l'">{{ it2.meta.title }}</span>
+            </a-menu-item>
+          </a-sub-menu>
+        </template>
+      </a-sub-menu>
     </a-menu>
   </a-layout-sider>
 </template>
