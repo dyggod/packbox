@@ -18,7 +18,7 @@ const permissions = [
   'dashboard:view',
 ];
 
-Mock.mock(`${import .meta.env.VITE_API_BASE_URL}/auth/login`, 'post', () => resError(token));
+Mock.mock(`${import .meta.env.VITE_API_BASE_URL}/auth/login`, 'post', () => resSuccess(token));
 
 Mock.mock(`${import .meta.env.VITE_API_BASE_URL}/auth/logout`, 'get', () => { resSuccess(); });
 

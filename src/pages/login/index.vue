@@ -11,11 +11,16 @@ import {
   reactive, toRefs, onBeforeMount, onMounted,
 } from 'vue';
 import { loginService } from '@/api';
+import { useUserStore } from '@/store/modules/user';
+import { useRouter } from 'vue-router';
 
-const clickLogin = async () => {
-  const { data } = await loginService.login('admin', 'admin');
-  console.log(data);
-};
+const userStore = useUserStore();
+const router = useRouter();
+
+async function clickLogin() {
+  const data = await loginService.login('admin', 'admin');
+  userStore.login(data.token, router);
+}
 </script>
 <style lang='scss' scoped>
 </style>

@@ -3,6 +3,7 @@ import type { RouteRecordRaw } from 'vue-router';
 import type { App } from 'vue';
 
 import { basicRoutes } from './routes';
+import setupRouterGuard from './guard';
 
 // app router
 export const router = createRouter({
@@ -12,9 +13,7 @@ export const router = createRouter({
   scrollBehavior: () => ({ left: 0, top: 0 }),
 });
 
-router.beforeEach((to, from, next) => {
-  next();
-});
+setupRouterGuard(router);
 
 // config router
 export function setupRouter(app: App<Element>) {

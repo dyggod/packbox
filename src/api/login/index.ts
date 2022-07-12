@@ -10,7 +10,7 @@ export async function login(username: string, password: string) {
     username,
     password,
   });
-  if (res.data.code === ResCode.SUCCESS) {
+  if (res.code === ResCode.SUCCESS) {
     return res.data;
   }
   return Promise.reject(res.data);

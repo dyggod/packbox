@@ -1,4 +1,4 @@
-import type { AppRouteRecordRaw } from '@/router/types';
+import type { AppRouteRecordRaw, LoginIgnore } from '@/router/types';
 import asyncRoutes from './mount';
 
 export const RootRoute: AppRouteRecordRaw = {
@@ -34,6 +34,19 @@ export const Layout: AppRouteRecordRaw = {
   ],
   meta: {
     title: 'Layout pages',
+  },
+};
+
+export const loginIgnore: LoginIgnore = {
+  names: ['404'], // 根据路由名称匹配
+  paths: ['/login', '*'], // 根据路由fullPath匹配
+  /**
+   * 判断路由是否包含在该配置中
+   * @param route vue-router 的 route 对象
+   * @returns {boolean}
+   */
+  includes(route): boolean {
+    return this.paths.includes(route.path);
   },
 };
 

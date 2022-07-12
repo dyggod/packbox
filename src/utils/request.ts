@@ -65,7 +65,7 @@ export async function request(
   method: HttpMethod,
   params: RequestParams,
   config?: AxiosRequestConfig,
-): Promise<AxiosResponse> {
+): Promise<AxiosResponse['data']> {
   switch (method) {
     case HttpMethod.GET:
       return axios.get(url, { params, ...config });

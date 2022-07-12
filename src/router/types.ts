@@ -1,4 +1,4 @@
-import type { RouteRecordRaw } from 'vue-router';
+import type { RouteRecordRaw, RouteLocationNormalized } from 'vue-router';
 import { defineComponent } from 'vue';
 
 export type RouteMeta = {
@@ -23,3 +23,9 @@ export interface AppRouteRecordRaw extends Omit<RouteRecordRaw, 'meta'> {
 }
 
 export type AppRouteModule = AppRouteRecordRaw;
+
+export interface LoginIgnore {
+  names: string[],
+  paths: string[],
+  includes(route: RouteLocationNormalized): boolean;
+}
