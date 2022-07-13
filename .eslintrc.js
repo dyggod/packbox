@@ -5,6 +5,9 @@ module.exports = {
     node: true,
     'vue/setup-compiler-macros': true,
   },
+  globals: {
+    NodeJS: true,
+  },
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',

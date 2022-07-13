@@ -1,5 +1,6 @@
 import { createApp } from 'vue';
 import Antd from 'ant-design-vue';
+import setupPlugins from '@/plugins';
 import App from './App.vue';
 import { setupRouter } from './router';
 import { setupStore } from './store';
@@ -24,6 +25,9 @@ function bootstrap() {
 
   // 配置i18n
   initI18n(app);
+
+  // 配置插件
+  setupPlugins(app);
 
   // 加载拦截器
   loadInterceptors(interceptors, { message: app.config.globalProperties.$message });
