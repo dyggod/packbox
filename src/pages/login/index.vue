@@ -95,7 +95,7 @@ const rules: Record<string | Rule[]> = {
 
 async function clickLogin() {
   const data = await loginService.login(formState.username, formState.password);
-  userStore.login(data.token, router);
+  userStore.login(data.token);
 }
 </script>
 <style lang='less' scoped>
