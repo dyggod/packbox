@@ -84,7 +84,7 @@ const formState = reactive<FormState>({
   password: '',
 });
 
-const rules: Record<string | Rule[]> = {
+const rules: Record<string, Rule[]> = {
   username: [
     { required: true, message: '请输入用户名' },
   ],
