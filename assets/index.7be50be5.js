@@ -1,1 +1,0 @@
-import{_ as r}from"./index.3ac9e31c.js";import{p as o,o as t,c as n,w as _,O as c}from"./vendor.c613b583.js";const s={};function d(e,p){const a=o("a-card");return t(),n(a,{class:"container-card"},{default:_(()=>[c(e.$slots,"default",{},void 0,!0)]),_:3})}var f=r(s,[["render",d],["__scopeId","data-v-2599da25"]]);export{f as C};
