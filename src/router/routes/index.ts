@@ -1,6 +1,8 @@
 import type { AppRouteRecordRaw, LoginIgnore } from '@/router/types';
 import asyncRoutes from './mount';
 
+export const homePath = '/home/index';
+
 export const RootRoute: AppRouteRecordRaw = {
   path: '/',
   name: 'Root',
@@ -23,10 +25,10 @@ export const Layout: AppRouteRecordRaw = {
   path: '/home',
   name: 'Home',
   component: () => import('@/layout/Layout.vue'),
-  redirect: '/home/index',
+  redirect: homePath,
   children: [
     {
-      path: '/home/index',
+      path: homePath,
       name: 'HomeIndex',
       component: () => import('@/pages/home/index.vue'),
       meta: {},
