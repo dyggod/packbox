@@ -46,7 +46,7 @@
             :key="`item_${index}_${ind}`"
             @click="navTo(item.path)"
           >
-            <span :class="item.meta.icon ? '' : 'p-l'">{{ item.meta.title }}</span>
+            <span :class="item.meta.icon ? '' : 'p-l'">{{ it.meta.title }}</span>
           </a-menu-item>
           <a-sub-menu
             v-else

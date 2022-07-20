@@ -8,18 +8,20 @@ const CssDemo: AppRouteRecordRaw = {
   name: `${routeName}`,
   component: Layout,
   redirect: `/${routeName}/index`,
+  meta: {
+    title: 'CSS效果',
+    icon: 'PieChartOutlined',
+  },
   children: [
     {
       path: `/${routeName}/index`,
       name: `${routeName}-index`,
       component: () => import('@/pages/cssDemo/index.vue'),
-      meta: {},
+      meta: {
+        title: '对角线',
+      },
     },
   ],
-  meta: {
-    title: 'Css pages',
-    icon: 'PieChartOutlined',
-  },
 };
 
 export default CssDemo;
