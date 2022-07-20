@@ -1,4 +1,5 @@
 export default {
+  'app.footer.copyright': 'Copyright ©2022 dyggod',
   'app.login.welcome': 'Welcome to PackBox',
   'app.login.submit': 'Login',
   'app.logout.submit': 'Logout',

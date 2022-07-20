@@ -1,4 +1,5 @@
 export default {
+  'app.footer.copyright': '版权所有 ©2022 dyggod',
   'app.login.welcome': 'Welcome to PackBox',
   'app.login.submit': '登录',
   'app.logout.submit': '退出登录',
