@@ -6,6 +6,12 @@
       <div>
         <ShadowBoxVue />
       </div>
+      <div>
+        <PrismCode
+          :value="'.mb-4 { margin-bottom: 1rem;}'"
+          language="less"
+        />
+      </div>
     </div>
   </Container>
 </template>
@@ -13,6 +19,7 @@
 <script lang='ts' setup>
 import ShadowBoxVue from '@/components/ShadowBox.vue';
 import Container from '@/components/container/index.vue';
+import PrismCode from '@/components/prism';
 
 </script>
 <style lang='less' scoped>

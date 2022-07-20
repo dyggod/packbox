@@ -12,6 +12,8 @@ Object.keys(modules).forEach((key) => {
 
 export default function setupPlugins(app: App) {
   plugins.forEach((plugin) => {
-    app.use(plugin);
+    if (plugin.install instanceof Function) {
+      app.use(plugin);
+    }
   });
 }

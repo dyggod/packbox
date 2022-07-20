@@ -21,7 +21,6 @@ const Test: AppRouteRecordRaw = {
       redirect: `/${routeName}/index/sub`,
       meta: {
         title: 'Test sub',
-        icon: 'PieChartOutlined',
       },
       children: [
         {

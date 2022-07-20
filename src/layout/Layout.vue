@@ -10,7 +10,7 @@
         <Main />
       </a-layout-content>
       <a-layout-footer style="text-align: center">
-        PackBox ©2022 Created by dyggod
+        {{ $t('app.footer.copyright') }}
       </a-layout-footer>
     </a-layout>
   </a-layout>
