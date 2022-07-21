@@ -1,10 +1,23 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 import { Interceptors, BootStrapOptions } from '#/common';
 
+/**
+ * 对参数对象做uri编码
+ * @param {object} params
+ * @returns string
+ */
+function encodeUriParams(params: Uncertainty): string {
+  return Object.keys(params).filter(
+    (it) => Object.prototype.hasOwnProperty.call(params, it),
+  ).reduce((pre, curr) => (
+    params[curr] ? `${(pre ? `${pre}&` : '') + curr}=${encodeURIComponent(params[curr])}` : pre), '');
+}
+
 // 请求配置
 axios.defaults.baseURL = String(import.meta.env.VITE_API_BASE_URL);
 axios.defaults.withCredentials = true;
 axios.defaults.timeout = 5000;
+axios.defaults.paramsSerializer = encodeUriParams; // 重载get参数编码方式
 
 // HTTP状态码
 export enum HttpStatus {
