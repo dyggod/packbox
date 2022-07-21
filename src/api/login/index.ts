@@ -1,5 +1,4 @@
 import { request, HttpMethod, ResCode } from '@/utils/request';
-import { UncertaintyStr } from '@/types/common';
 
 const api: UncertaintyStr = {
   login: '/auth/login',

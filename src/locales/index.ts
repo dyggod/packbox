@@ -1,6 +1,5 @@
 import { App } from 'vue';
 import { createI18n } from 'vue-i18n';
-import { StrOptions } from '#/common';
 import zh from './lang/zh-CH';
 import en from './lang/en-US';
 
