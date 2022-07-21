@@ -10,6 +10,8 @@
     "prepare": "husky install",
     "commit": "cz",
     "release": "standard-version",
+    "alpha": "standard-version --prerelease alpha",
+    "beta": "standard-version --prerelease beta",
     "release:first": "standard-version --first-release"
   },
   "dependencies": {
