@@ -8,8 +8,8 @@
       </div>
       <div>
         <PrismCode
-          :value="'.mb-4 { margin-bottom: 1rem;}'"
-          language="less"
+          :value="jsonValue"
+          language="json"
         />
       </div>
     </div>
@@ -20,6 +20,10 @@
 import ShadowBoxVue from '@/components/ShadowBox.vue';
 import Container from '@/components/container/index.vue';
 import PrismCode from '@/components/prism';
+import { ref } from 'vue';
+
+const obj = { a: 132, b: '123', c: { d: 456 } };
+const jsonValue = ref(JSON.stringify(obj, null, 2));
 
 </script>
 <style lang='less' scoped>

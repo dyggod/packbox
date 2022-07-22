@@ -15,6 +15,7 @@ import { PrismEditor } from 'vue-prism-editor';
 import 'vue-prism-editor/dist/prismeditor.min.css';
 import prism from 'prismjs';
 import 'prismjs/components/prism-less';
+import 'prismjs/components/prism-json';
 import 'prismjs/themes/prism-tomorrow.css';
 import { ref } from 'vue';
 
@@ -50,6 +51,7 @@ const props = defineProps({
 });
 
 const editorCode = ref(props.value);
+console.log('prism.languages: ', prism.languages);
 const highlighter = (code: string) => prism.highlight(
   code,
   prism.languages[props.language],
