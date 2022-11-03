@@ -2,6 +2,10 @@
 
 一个使用Vue3 + Vite + Typescript + Pinia + ESLint + Ant-Design-Vue 构建的后台管理系统。
 
+在线访问地址：
+
+https://dyggod.github.io/packbox/
+
 ## Install
 本项目使用pnpm作为包管理工具，请遵守
 
