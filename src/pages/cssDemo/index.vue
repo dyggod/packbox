@@ -13,6 +13,7 @@
         />
       </div>
     </div>
+    <WaterWave :value="50" />
   </Container>
 </template>
 
@@ -20,6 +21,7 @@
 import ShadowBoxVue from '@/components/ShadowBox.vue';
 import Container from '@/components/container/index.vue';
 import PrismCode from '@/components/prism';
+import { WaterWave } from '@/components/charts';
 import { ref } from 'vue';
 
 const obj = { a: 132, b: '123', c: { d: 456 } };
